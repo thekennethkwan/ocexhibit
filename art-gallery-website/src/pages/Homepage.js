@@ -2,7 +2,8 @@ import React from 'react';
 import './Homepage.css';
 
 function Homepage() {
-  // Optional: Add event details and URLs in an array
+  // Here we have some events that were manually added
+  // Must automate this process
   const events = [
     {
       title: 'Uncanvased',

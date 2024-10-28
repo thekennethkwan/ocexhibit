@@ -7,8 +7,9 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Add login logic here (e.g., authentication API call)
+    // Add login logic here
     // We will need to connect the db here
+    // User authentication??
     console.log('Username:', username);
     console.log('Password:', password);
   };

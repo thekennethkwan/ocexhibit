@@ -1,4 +1,5 @@
-// Still compiling locations
+// Still compiling more locations
+// Will eventually have a total of at least 10+
 
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';

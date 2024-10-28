@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AddEvent.css';
 
+/*
 function AddEvent({ onAddEvent }) {
   const [date, setDate] = useState('');
   const [title, setTitle] = useState('');
@@ -42,3 +43,4 @@ function AddEvent({ onAddEvent }) {
 }
 
 export default AddEvent;
+*/

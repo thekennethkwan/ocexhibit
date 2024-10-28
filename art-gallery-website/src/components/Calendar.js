@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Calendar.css'; // Custom styles if needed
-import AddEvent from './AddEvent'; // for admin only
+// import AddEvent from './AddEvent'; // for admin only might remove this
 
 function EventsCalendar() {
   const [date, setDate] = useState(new Date());

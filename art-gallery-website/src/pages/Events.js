@@ -16,3 +16,5 @@ function Events() {
 
 export default Events;
 
+// Might need a css for Events even though theres some for Calendar and Map
+// need to make this more seamless

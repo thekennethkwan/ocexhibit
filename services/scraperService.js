@@ -1,4 +1,4 @@
-// skeleton code, will need to populate with actual art gallery information
+// NEEDS TO BE TESTED WITH OCR
 // STILL IN PROGRESS AKA NOT FINISHED
 // There may be more exceptions in the future, need to consult
 // made with cheerio
@@ -11,6 +11,7 @@ const Event = require('../models/eventModel');
 const galleryConfig = require('../config/galleryConfig.json');
 
 // OCR function
+// Using EasyOCR, however having trouble with anaconda and pyTorch
 const runOCR = async (imageData) => {
   const reader = new EasyOCR.Reader(['en']);
   const result = await reader.readtext(imageData);
@@ -18,6 +19,7 @@ const runOCR = async (imageData) => {
 };
 
 // Function for editing fields
+// This is just to verify that the information pulled is correct
 const editField = (fieldName, currentValue) => {
   return new Promise((resolve) => {
     const rl = readline.createInterface({
@@ -45,6 +47,7 @@ const confirmAndEditEvent = async (event) => {
     output: process.stdout
   });
 
+  // Might revamp so that all of these types of functions are in one central area
   return new Promise((resolve) => {
     rl.question('Do you want to save this event to the database? (yes/no): ', (answer) => {
       rl.close();
@@ -53,6 +56,8 @@ const confirmAndEditEvent = async (event) => {
   });
 };
 
+// NEEDS HEAVY TESTING WITH OCR INCLUDED
+// MUST ALSO BE CONNECTED TO THE DB PLEASE
 const scrapeEvents = async () => {
   for (const gallery of galleryConfig) {
     const { url, selectors } = gallery;
