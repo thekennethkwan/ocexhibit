@@ -15,6 +15,8 @@ router.get('/scrape', async (req, res) => {
 });
 
 // Route to trigger OCR on an image
+// WILL NEED TO REVISIT THIS!!!
+/*
 router.get('/ocr', async (req, res) => {
   try {
     const extractedText = await performOCR();  // Run OCR
@@ -25,3 +27,4 @@ router.get('/ocr', async (req, res) => {
 });
 
 module.exports = router;
+*/

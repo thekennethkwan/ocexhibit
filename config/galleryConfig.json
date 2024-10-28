@@ -1,0 +1,37 @@
+[
+    {
+      "name": "OCCCA",
+      "url": "https://www.occca.org/current-exhibition",
+      "selectors": {
+        "eventContainer": ".exhibition-item",
+        "eventName": ".exhibition-title",
+        "eventDate": ".exhibition-dates",
+        "eventDescription": ".exhibition-description",
+        "eventImage": ".exhibition-image img"
+      }
+    },
+    {
+      "name": "Art at City Hall, Irvine",
+      "url": "https://www.cityofirvine.org/community-services-department/art-city-hall",
+      "selectors": {
+        "eventContainer": ".event-detail",
+        "eventName": "h3",
+        "eventDate": ".event-date",
+        "eventArtists": ".artist-list",
+        "eventImage": ".event-image img"
+      }
+    },
+    {
+      "name": "Huntington Beach Art Center",
+      "url": "https://www.huntingtonbeachartcenter.org/",
+      "selectors": {
+        "eventContainer": ".current-exhibit",
+        "eventName": "h2",
+        "eventDate": ".exhibit-dates",
+        "eventDescription": ".exhibit-description",
+        "eventArtists": ".artist-names",
+        "eventImage": ".exhibit-image img"
+      }
+    }
+  ]
+  
