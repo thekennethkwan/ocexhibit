@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listings - Art Event Tracker</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #404040, #808080);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .intro {
+      text-align: center;
+      margin: 20px 0;
+      color: #555;
+    }
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .tab-buttons button {
+      padding: 12px 25px;
+      cursor: pointer;
+      background-color: #404040;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .tab-buttons button:hover {
+      background-color: #404040;
+    }
+    .tab-buttons button.active {
+      background-color: #404040;
+    }
+    .event-section {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .event-section.active {
+      display: flex;
+    }
+    .event-box {
+      background-color: #fff;
+      width: 100%;
+      max-width: 250px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .event-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .event-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .event-date {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: linear-gradient(to right, #404040, #808080);
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Art Event Listings</h1>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <p>Welcome to ExhibitOC! This is your go-to hub for discovering the latest and most exciting art events in Orange County. Here, you’ll find a curated list of upcoming exhibitions, popular shows, and must-see events tailored for art lovers. Whether you're looking to explore new artists, attend exclusive openings, or keep up with what's trending in the OC art scene, ExhibitOC has you covered.Click the tabs to see what's new!</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button onclick="showSection('upcoming')" class="active">Upcoming Events</button>
+      <button onclick="showSection('trending')">Trending Events</button>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <div id="upcoming" class="event-section active">
+      <div class="event-box">
+        <h3 class="event-title">Upcoming Event 1</h3>
+        <p class="event-date">Date: October 20, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Upcoming Event 2</h3>
+        <p class="event-date">Date: October 25, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Upcoming Event 3</h3>
+        <p class="event-date">Date: November 1, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Upcoming Event 4</h3>
+        <p class="event-date">Date: November 5, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Upcoming Event 5</h3>
+        <p class="event-date">Date: November 10, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Upcoming Event 6</h3>
+        <p class="event-date">Date: November 15, 2024</p>
+      </div>
+    </div>
+
+    <!-- Trending Events Section -->
+    <div id="trending" class="event-section">
+      <div class="event-box">
+        <h3 class="event-title">Trending Event 1</h3>
+        <p class="event-date">Date: October 18, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Trending Event 2</h3>
+        <p class="event-date">Date: October 22, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Trending Event 3</h3>
+        <p class="event-date">Date: October 28, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Trending Event 4</h3>
+        <p class="event-date">Date: November 2, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Trending Event 5</h3>
+        <p class="event-date">Date: November 8, 2024</p>
+      </div>
+      <div class="event-box">
+        <h3 class="event-title">Trending Event 6</h3>
+        <p class="event-date">Date: November 12, 2024</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Art Event Tracker | Orange County, CA</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      var sections = document.getElementsByClassName('event-section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+      }
+      
+      document.getElementById(sectionId).classList.add('active');
+      
+      var buttons = document.querySelectorAll('.tab-buttons button');
+      buttons.forEach(button => button.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
