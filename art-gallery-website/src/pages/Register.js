@@ -40,7 +40,7 @@ function Register() {
             alert('Error registering user - ' + data.message);
         }
         } catch (error) {
-        console.error('Error registering user:', error);
+            console.error('Error registering user:', error);
         }
   };
 
@@ -96,3 +96,4 @@ function Register() {
 }
 
 export default Register;
+// test
