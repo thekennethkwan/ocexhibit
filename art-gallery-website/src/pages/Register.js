@@ -28,16 +28,16 @@ function Register() {
             }),
         });
 
-        console.log('Response received:', response);
+        //console.log('Response received:', response);
 
         const data = await response.json();
 
-        console.log('Data from response:', data);
+        //console.log('Data from response:', data);
 
-        if (data.any) {
-            console.log('User registered successfully');
+        if (data.message === 'User registered successfully') {
+            alert('User registered successfully');
         } else {
-            console.log('Registration failed');
+            alert('Error registering user - ' + data.message);
         }
         } catch (error) {
         console.error('Error registering user:', error);

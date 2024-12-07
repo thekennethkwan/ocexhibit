@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const { applyDefaults } = require('./models/users');
+
+const registerRoute = require('./routes/registerRoute')
 require('dotenv').config();
 
 const app = express();
@@ -20,8 +23,10 @@ mongoose.connect('mongodb://localhost:27017/ocexhibit')
 //const eventRoutes = require('./routes/eventRoutes');
 //app.use('/api', eventRoutes);  // All event-related routes will have the '/api' prefix
 
+app.use('/api', registerRoute)
+
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Global error handler
