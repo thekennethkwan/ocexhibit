@@ -1,0 +1,101 @@
+/* Homepage.css */
+
+.homepage {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+  background: linear-gradient(135deg, #e3f2fd, #f4f4f4);
+}
+
+.header {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #e1e8f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.8em;
+  margin: 0;
+  color: #2e3b4e;
+}
+
+.header p {
+  font-size: 1.3em;
+  margin-top: 10px;
+  color: #555;
+}
+
+.featured-events {
+  padding: 40px 0;
+}
+
+.featured-events h2 {
+  text-align: center;
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.event-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.event-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card h3 {
+  font-size: 1.6em;
+  color: #444;
+  margin: 15px 0;
+}
+
+.event-card p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.about {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #e1e8f0;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.about h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.about p {
+  font-size: 1.1em;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}

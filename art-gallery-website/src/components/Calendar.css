@@ -1,0 +1,32 @@
+/* Calendar.css */
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px; /* Make the container wider */
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar {
+  width: 100%;
+  max-width: 1200px; /* Increase width to match the container */
+  font-size: 1.2em;
+}
+
+/* Moderate height adjustments */
+.react-calendar__tile {
+  min-height: 60px; /* Set a moderate height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0; /* Slight vertical padding for spacing */
+}
+
+.react-calendar__month-view__days__day {
+  height: 80px; /* Slightly increased cell height for readability */
+}
