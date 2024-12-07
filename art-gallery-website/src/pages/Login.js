@@ -6,13 +6,31 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Add login logic here
-    // We will need to connect the db here
-    // User authentication??
-    console.log('Username:', username);
-    console.log('Password:', password);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+          method: 'POST',
+          headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              username: username,
+              password: password,
+          }),
+      });
+
+        const data = await response.json();
+
+        if (data.message === 'Login successful') {
+            alert('Login successful');
+        } else {
+            alert('Error logging in - ' + data.message);
+        }
+    } catch (error) {
+      console.error('Error registering user:', error);
+    }
   };
 
   return (

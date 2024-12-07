@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const { applyDefaults } = require('./models/users');
 
 const registerRoute = require('./routes/registerRoute')
+const loginRoute = require('./routes/loginRoute')
 require('dotenv').config();
 
 const app = express();
@@ -24,6 +25,7 @@ mongoose.connect('mongodb://localhost:27017/ocexhibit')
 //app.use('/api', eventRoutes);  // All event-related routes will have the '/api' prefix
 
 app.use('/api', registerRoute)
+app.use('/api', loginRoute)
 
 // Start the server
 const PORT = process.env.PORT || 5000;
