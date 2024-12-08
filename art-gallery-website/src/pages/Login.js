@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
-function Login() {
+function Login({ setUser }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,7 +26,10 @@ function Login() {
         const data = await response.json();
 
         if (data.message === 'Login successful') {
+            setUser(data.user)
+            console.log('Logged in user: ', data.user);
             alert('Login successful');
+            navigate('/');
         } else {
             alert('Error logging in - ' + data.message);
         }
