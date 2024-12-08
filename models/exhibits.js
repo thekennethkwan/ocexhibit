@@ -5,24 +5,19 @@ const exhibitSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String,
-        required: true
-    },
-    address: {
-        type: String,
-        required: true
-    },
     date: {
         type: Date,
         required: true
     },
-    price: {
-        type: Number
-    }
-    // image: { // Placeholder for image of the exhibit
-    //     type: String
-    // }
+    image: {
+        data: Buffer,
+    },
+    url: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
 })
 
 mongoose.model('Exhibit', exhibitSchema)
