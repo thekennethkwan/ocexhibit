@@ -14,7 +14,7 @@ function Register() {
         e.preventDefault();
 
         if (password !== confirmPassword) {
-        console.log('Passwords do not match');
+        alert('Passwords do not match');
         return;
         }
 

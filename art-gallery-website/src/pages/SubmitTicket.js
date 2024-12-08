@@ -27,14 +27,14 @@ function SubmitTicket( { user } ) {
           alert('Ticket submitted successfully');
 
           emailjs.send(
-            'service_15we7ox', // service ID
-            'template_3vhodzo', // template ID
+            'service_byrt8tb', // service ID
+            'template_ecqhq68', // template ID
             {
               ticket_type: ticketType,
               user_email: user.email,
               message: message,
             }, 
-            'tnuy3TSj81PyipWAW' // public key - found under account
+            '13eOk1qc-a_WhZo0h' // public key - found under account
           )
       };
       setTicketType('');
