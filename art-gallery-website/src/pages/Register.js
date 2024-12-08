@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 function Register() {
@@ -7,6 +8,8 @@ function Register() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
   
+    const navigate = useNavigate();
+
     const handleRegister = async (e) => {
         e.preventDefault();
 
@@ -36,8 +39,7 @@ function Register() {
 
         if (data.message === 'User registered successfully') {
             alert('User registered successfully');
-        } else {
-            alert('Error registering user - ' + data.message);
+            navigate('/login');
         }
         } catch (error) {
             console.error('Error registering user:', error);

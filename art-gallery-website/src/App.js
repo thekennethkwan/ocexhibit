@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import './App.css';
 
@@ -20,8 +20,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/login" element={<Login setUser={ setUser }/>} />
-            <Route path="/submit-ticket" element={<SubmitTicket />} />
+            <Route path="/login" element={<Login setUser={ setUser } />} />
+            <Route path="/submit-ticket" element={<SubmitTicket user= { user } />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </div>

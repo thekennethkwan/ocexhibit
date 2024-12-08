@@ -2,40 +2,49 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './SubmitTicket.css';
 
-function SubmitTicket() {
+function SubmitTicket( { user } ) {
   const [ticketType, setTicketType] = useState('');
-  const [userEmail, setUserEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleTicketSubmission = (e) => {
+  const handleTicketSubmission = async (e) => {
     e.preventDefault();
-    
-    // Using EmailJS to send email
-    // might not end up using Email JS
-    // but short term we are able to test that the ticket system works
+    try {
+      const response = await fetch('http://localhost:5000/api/submit-ticket', {
+          method: 'POST',
+          headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              ticketType: ticketType,
+              userEmail: user.email,
+              ticketMessage: message,
+          }),
+      });
 
-    emailjs.send(
-      'service_15we7ox', // service ID
-      'template_3vhodzo', // template ID
-      {
-        ticket_type: ticketType,
-        user_email: userEmail,
-        message: message,
-      }, 
-      'tnuy3TSj81PyipWAW' // public key - found under account
-    )
-    .then((result) => {
-      console.log(result.text);
-      alert('Ticket submitted successfully!');
-    }, (error) => {
-      console.log(error.text);
-      alert('Failed to submit ticket, please try again.');
-    });
-    
-    // Clear form fields
-    setTicketType('');
-    setUserEmail('');
-    setMessage('');
+      const data = await response.json();
+
+      if (data.message === 'Ticket submitted successfully') {
+          alert('Ticket submitted successfully');
+
+          emailjs.send(
+            'service_15we7ox', // service ID
+            'template_3vhodzo', // template ID
+            {
+              ticket_type: ticketType,
+              user_email: user.email,
+              message: message,
+            }, 
+            'tnuy3TSj81PyipWAW' // public key - found under account
+          )
+      };
+      setTicketType('');
+      setMessage('');
+      } catch (error) {
+          alert('Error submitting ticket - ' + error);
+      }
+
+      setTicketType('');
+      setMessage('');
   };
 
   return (
@@ -55,17 +64,6 @@ function SubmitTicket() {
             <option value="Delete Gallery">Delete Gallery</option>
             <option value="Report Bug">Report Bug</option>
           </select>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="email">Your Email</label>
-          <input
-            type="email"
-            id="email"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
-            required
-          />
         </div>
 
         <div className="form-group">

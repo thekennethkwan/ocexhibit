@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 
@@ -32,7 +32,9 @@ function Header( {user, setUser} ) {
           )}
         </li>
         <li>
-          <Link to="/submit-ticket">Submit Ticket</Link>
+          {user && (
+            <Link to="/submit-ticket">Submit Ticket</Link>
+          )}
         </li>
       </ul>
     </div>);
