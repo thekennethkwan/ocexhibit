@@ -33,7 +33,9 @@ function Homepage() {
         const response = await fetch('http://localhost:5000/api/events');
         const events = await response.json();
 
-        const featuredEvents = events.filter(event => event.featured);
+        const today = new Date();
+
+        const featuredEvents = events.filter(event => event.featured && new Date(event.endDate) >= today);
 
         setEvents(featuredEvents);
       } catch (error) {
