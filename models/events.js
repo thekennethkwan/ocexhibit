@@ -5,7 +5,11 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
+    startDate: {
+        type: Date,
+        required: true
+    },
+    endDate: {
         type: Date,
         required: true
     },
@@ -15,8 +19,9 @@ const eventSchema = new mongoose.Schema({
     url: {
         type: String,
     },
-    address: {
-        type: String,
+    featured: {
+        type: Boolean,
+        default: false
     }
 })
 

@@ -6,6 +6,7 @@ const registerRoute = require('./routes/registerRoute')
 const loginRoute = require('./routes/loginRoute')
 const ticketRoute = require('./routes/ticketRoute')
 const addEventRoute = require('./routes/addEventRoute')
+const getEventsRoute = require('./routes/getEventsRoute')
 
 require('dotenv').config();
 
@@ -30,6 +31,7 @@ app.use('/api', registerRoute)
 app.use('/api', loginRoute)
 app.use('/api', ticketRoute)
 app.use('/api', addEventRoute)
+app.use('/api', getEventsRoute)
 
 // Start the server
 const PORT = process.env.PORT || 5000;

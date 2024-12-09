@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+//import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Homepage.css';
+//import events from '../../../models/events';
 
 function Homepage() {
-  // Here we have some events that were manually added
+  /*// Here we have some events that were manually added
   // Must automate this process
   const events = [
     {
@@ -22,8 +24,27 @@ function Homepage() {
       date: 'Oct 2 - Dec 7, 2024',
       image: '/images/event3.jpg',
       url: 'https://www.huntingtonbeachartcenter.org/veteransphotoshow.html',
-    },*/
-  ];
+    },
+  ];*/
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/events');
+        const events = await response.json();
+
+        const featuredEvents = events.filter(event => event.featured);
+
+        setEvents(featuredEvents);
+      } catch (error) {
+        console.error('Error fetching events: ', error);
+      }
+    };
+    
+    fetchEvents();
+  }, []);
 
   return (
     <div className="homepage">
@@ -35,7 +56,8 @@ function Homepage() {
       <section className="featured-events">
         <h2>Featured Events</h2>
         <div className="event-grid">
-          {events.map((event, index) => (
+          {events && events.length > 0 ?
+            events.map((event, index) => (
             <a
               key={index}
               href={event.url}
@@ -43,11 +65,11 @@ function Homepage() {
               rel="noopener noreferrer"
               className="event-card"
             >
-              <img src={event.image} alt={event.title} />
-              <h3>{event.title}</h3>
-              <p>Date: {event.date}</p>
+              <img src={event.image} alt={event.name} />
+              <h3>{event.name}</h3>
+              <p>Date: {new Date(event.startDate).toLocaleDateString()} - {new Date(event.endDate).toLocaleDateString()}</p>
             </a>
-          ))}
+          )) : <p>No featured events at the moment.</p>}
         </div>
       </section>
 

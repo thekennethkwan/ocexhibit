@@ -29,8 +29,8 @@ const s3 = new S3Client({
 
 router.post('/add-event', upload.single('image'), async (req, res) => {
 
-  //console.log('Request received:', req.body);
-  //console.log('File received:', req.file);
+  console.log('Request received:', req.body);
+  console.log('File received:', req.file);
 
   const imageName = randomImageName();
 
@@ -47,10 +47,10 @@ router.post('/add-event', upload.single('image'), async (req, res) => {
 
   const newEvent = new Event({
     name: req.body.name,
-    date: req.body.date,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
     image: imageName,
     url: req.body.url,
-    address: req.body.address,
   });
 
   newEvent.save()
