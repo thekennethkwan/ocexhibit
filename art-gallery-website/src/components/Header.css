@@ -30,7 +30,7 @@
     display: flex;
     gap: 20px;
     margin: 0;
-    margin-right: 50px; /* Shift the whole nav-links list slightly to the left */
+    margin-right: 50px;
   }
   
   .nav-links li a {
@@ -65,6 +65,6 @@
   }
   
   .content {
-    padding: 80px 20px; /* Adjust for topbar height */
+    padding: 80px 20px;
   }
   

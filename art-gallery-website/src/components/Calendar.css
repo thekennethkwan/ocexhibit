@@ -1,10 +1,8 @@
-/* Calendar.css */
-
 .calendar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px; /* Make the container wider */
+  max-width: 1200px;
   margin: 50px auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -14,19 +12,53 @@
 
 .react-calendar {
   width: 100%;
-  max-width: 1200px; /* Increase width to match the container */
+  max-width: 1200px;
   font-size: 1.2em;
 }
 
-/* Moderate height adjustments */
 .react-calendar__tile {
-  min-height: 60px; /* Set a moderate height */
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 0; /* Slight vertical padding for spacing */
+  padding: 8px 0;
+  text-align: center;
 }
 
 .react-calendar__month-view__days__day {
-  height: 80px; /* Slightly increased cell height for readability */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.react-calendar__month-view__days__day__number {
+  display: block;
+  text-align: center;
+}
+
+.events-list {
+  margin-top: 30px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.events-list h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.event-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.events-list p {
+  font-size: 1.1em;
+  color: #555;
 }

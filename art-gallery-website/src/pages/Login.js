@@ -28,7 +28,6 @@ function Login({ setUser }) {
         if (data.message === 'Login successful') {
             setUser(data.user)
             // console.log('Logged in user: ', data.user);
-            alert('Login successful');
             navigate('/');
         } else {
             alert('Error logging in - ' + data.message);

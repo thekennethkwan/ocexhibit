@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-//import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Homepage.css';
-//import events from '../../../models/events';
 
 function Homepage() {
   /*// Here we have some events that were manually added

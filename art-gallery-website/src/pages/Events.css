@@ -1,0 +1,119 @@
+.events {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    background: linear-gradient(135deg, #f3f4f6, #e0e0e0);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #2e3b4e;
+    margin-bottom: 40px;
+}
+
+.event-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.event-grid p { 
+    text-align: center;
+    font-size: 1.5em;
+    color: #666;
+    margin-top: 20px;
+}
+
+.event-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.add-event {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.add-event button {
+    background-color: #3498db;
+}
+
+.add-event button:hover {
+    background-color: #2980b9;
+}
+
+.calendar-map-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar-map-container .calendar,
+.calendar-map-container .map {
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.calendar-map-container .calendar {
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+}
+
+.calendar-map-container .map {
+    padding: 20px;
+    height: 300px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #e1e8f0;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1em;
+    color: #666;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.add-event-container {
+    text-align: center;
+}
+
+.add-event-button {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.add-event-button:hover {
+    background-color: #2980b9;
+  }

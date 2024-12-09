@@ -29,8 +29,8 @@ const s3 = new S3Client({
 
 router.post('/add-event', upload.single('image'), async (req, res) => {
 
-  console.log('Request received:', req.body);
-  console.log('File received:', req.file);
+  //console.log('Request received:', req.body);
+  //console.log('File received:', req.file);
 
   const imageName = randomImageName();
 

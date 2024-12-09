@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import './Calendar.css'; // Custom styles if needed
-// import AddEvent from './AddEvent'; // for admin only might remove this
+import './Calendar.css';
 
 function EventsCalendar() {
   const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState([]);
 
   // Fetch events from backend (dummy fetch here)
-  useEffect(() => {
+  /*useEffect(() => {
     // Simulate a fetch call
     const fetchEvents = async () => {
       // Replace this with actual fetch from backend
@@ -22,12 +21,32 @@ function EventsCalendar() {
       setEvents(fetchedEvents);
     };
     fetchEvents();
+  }, []);*/
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/events');
+        const events = await response.json();
+
+        const today = new Date();
+
+        const upcomingEvents = events.filter(event => new Date(event.endDate) >= today);
+        
+        setEvents(upcomingEvents);
+      } catch (error) {
+        console.error('Error fetching events: ', error);
+      }
+    };
+    
+    fetchEvents();
   }, []);
 
   // Filter events for the selected date
-  const eventsForDate = events.filter(
-    (event) => event.date === date.toISOString().split('T')[0]
-  );
+  const eventsForDate = events.filter((event) => {
+    const eventDate = new Date(event.endDate);
+    return eventDate.toISOString().split('T')[0] >= date.toISOString().split('T')[0];
+  });
 
   return (
     <div className="calendar-container">
@@ -37,7 +56,7 @@ function EventsCalendar() {
         {eventsForDate.length ? (
           eventsForDate.map((event, index) => (
             <div key={index} className="event-item">
-              {event.title}
+              {event.name}
             </div>
           ))
         ) : (
