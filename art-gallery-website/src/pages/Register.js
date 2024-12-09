@@ -98,4 +98,3 @@ function Register() {
 }
 
 export default Register;
-// test

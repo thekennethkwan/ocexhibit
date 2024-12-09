@@ -17,12 +17,12 @@ function Homepage() {
       image: '/images/event2.jpg',
       url: 'https://www.occca.org/current-exhibition',
     },
-    {
+    /*{
       title: 'Observations',
       date: 'Oct 2 - Dec 7, 2024',
       image: '/images/event3.jpg',
       url: 'https://www.huntingtonbeachartcenter.org/veteransphotoshow.html',
-    },
+    },*/
   ];
 
   return (

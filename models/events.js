@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const exhibitSchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -10,16 +10,16 @@ const exhibitSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        data: Buffer,
+        type: String,
     },
     url: {
         type: String,
     },
     address: {
         type: String,
-    },
+    }
 })
 
-mongoose.model('Exhibit', exhibitSchema)
+mongoose.model('Event', eventSchema)
 
-module.exports = mongoose.model('Exhibit')
+module.exports = mongoose.model('Event')

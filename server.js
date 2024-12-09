@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { applyDefaults } = require('./models/users');
 
 const registerRoute = require('./routes/registerRoute')
 const loginRoute = require('./routes/loginRoute')
 const ticketRoute = require('./routes/ticketRoute')
+const addEventRoute = require('./routes/addEventRoute')
+
 require('dotenv').config();
 
 const app = express();
@@ -17,7 +18,7 @@ app.use(cors({
 app.use(express.json());  // For parsing JSON bodies
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/ocexhibit')
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
@@ -28,6 +29,7 @@ mongoose.connect('mongodb://localhost:27017/ocexhibit')
 app.use('/api', registerRoute)
 app.use('/api', loginRoute)
 app.use('/api', ticketRoute)
+app.use('/api', addEventRoute)
 
 // Start the server
 const PORT = process.env.PORT || 5000;
