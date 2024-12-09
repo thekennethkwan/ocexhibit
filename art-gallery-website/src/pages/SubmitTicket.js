@@ -60,7 +60,7 @@ function SubmitTicket( { user } ) {
             required
           >
             <option value="">Select an option</option>
-            <option value="Add Gallery">Add Gallery</option>
+            <option value="Add Gallery">Add Gallery (Please provide a link)</option>
             <option value="Delete Gallery">Delete Gallery</option>
             <option value="Report Bug">Report Bug</option>
           </select>
