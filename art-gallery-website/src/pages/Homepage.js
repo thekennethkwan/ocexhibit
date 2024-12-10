@@ -35,7 +35,7 @@ function Homepage() {
 
         const today = new Date();
 
-        const featuredEvents = events.filter(event => event.featured && new Date(event.endDate) >= today);
+        const featuredEvents = events.filter(event => event.featured && new Date(event.startDate) <= today && new Date(event.endDate) >= today);
 
         setEvents(featuredEvents);
       } catch (error) {

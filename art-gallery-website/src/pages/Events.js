@@ -16,7 +16,7 @@ function Events( {user} ) {
 
         const today = new Date();
 
-        const upcomingEvents = events.filter(event => new Date(event.endDate) >= today);
+        const upcomingEvents = events.filter(event => new Date(event.startDate) <= today && new Date(event.endDate) >= today) ;
         
         setEvents(upcomingEvents);
       } catch (error) {
@@ -37,7 +37,7 @@ function Events( {user} ) {
         </div>
       )}
 
-      <h1>Upcoming Art Events</h1>
+      <h1>Ongoing Art Events</h1>
       <div className="event-grid">
           {events && events.length > 0 ?
             events.map((event, index) => (
